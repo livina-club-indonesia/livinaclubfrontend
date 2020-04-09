@@ -14,7 +14,50 @@ module.exports = {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    script: [
+      { src: '/assets/vendor/jquery/jquery.min.js' },
+      { src: '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' },
+      { src: '/assets/vendor/jquery.easing/jquery.easing.min.js' },
+      { src: '/assets/vendor/php-email-form/validate.js' },
+      { src: '/assets/vendor/owl.carousel/owl.carousel.min.js' },
+      { src: '/assets/vendor/isotope-layout/isotope.pkgd.min.js' },
+      { src: '/assets/vendor/venobox/venobox.min.js' },
+      { src: '/assets/vendor/aos/aos.js' },
+      { src: '/assets/js/main.js' }
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i'
+      },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: '/assets/vendor/icofont/icofont.min.css'
+      },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: '/assets/vendor/boxicons/css/boxicons.min.css'
+      },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: '/assets/vendor/owl.carousel/assets/owl.carousel.min.css'
+      },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: '/assets/vendor/venobox/venobox.css'
+      },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: '/assets/vendor/aos/aos.css'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -23,11 +66,14 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: [],
+  css: [
+    '~/assets/css/style.css',
+    '~/assets/vendor/bootstrap/css/bootstrap.min.css'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/vee-validate.js', '~plugins/filters.js'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -53,6 +99,7 @@ module.exports = {
    ** Build configuration
    */
   build: {
+    transpile: ['vee-validate/dist/rules'],
     /*
      ** You can extend webpack config here
      */
